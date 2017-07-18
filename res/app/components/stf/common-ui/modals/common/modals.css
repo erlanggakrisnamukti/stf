@@ -63,8 +63,15 @@
 
 .stf-modal .device-name {
   color: #3FA9F5;
-  font-size: 16px;
-  margin: 10px 0;
+  font-size: 7px;
+  margin: 5px 0;
+  font-family: 'HelveticaNeue-Light', Helvetica, Arial, sans-serif;
+}
+
+.stf-modal .device-name {
+  color: #3FA9F5;
+  font-size: 7px;
+  margin: 5px 0;
   font-family: 'HelveticaNeue-Light', Helvetica, Arial, sans-serif;
 }
 
