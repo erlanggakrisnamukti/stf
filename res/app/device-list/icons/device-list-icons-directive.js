@@ -48,10 +48,10 @@ module.exports = function DeviceListIconsDirective(
         var img = a.firstChild.firstChild
         var name = a.firstChild.nextSibling
         var nt = name.firstChild
-        //asd
+        //20170717 - EK
         var owner = name.nextSibling
         var ot = owner.firstChild
-        //asd
+        //eof20170717
         var button = owner.nextSibling
         var at = button.firstChild
         var classes = 'btn btn-xs device-status '
@@ -65,7 +65,7 @@ module.exports = function DeviceListIconsDirective(
         nt.nodeValue = device.enhancedName;
 
         // .device-owner
-        ot.nodeValue = device.enhancedUserName;
+        ot.nodeValue = device.enhancedOwnerEmail;
 
         // button
         at.nodeValue = $filter('translate')(device.enhancedStateAction)
@@ -88,12 +88,18 @@ module.exports = function DeviceListIconsDirective(
           return stateClasses
         }
 
+        owner.className = 'device-owner '
+
         button.className = classes + getStateClasses(device.state)
 
         if (device.state === 'available') {
           name.classList.add('state-available')
+          owner.classList.remove('state-booked')
+          owner.classList.add('state-available')
         } else {
           name.classList.remove('state-available')
+          owner.classList.remove('state-available')
+          owner.classList.add('state-booked')
         }
 
         if (device.usable) {

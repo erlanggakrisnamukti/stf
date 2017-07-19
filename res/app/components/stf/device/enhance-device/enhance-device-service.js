@@ -61,6 +61,7 @@ module.exports = function EnhanceDeviceServiceFactory($filter, AppState) {
     if (device.owner) {
       device.enhancedUserProfileUrl = enhanceUserProfileUrl(device.owner.email)
       device.enhancedUserName = device.owner.name || 'No name'
+      device.enhancedOwnerEmail = device.owner.email
     }
   }
 
